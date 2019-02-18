@@ -1,6 +1,6 @@
 using System;
-using WebSocketSharp;
-using WebSocketSharp.Server;
+using WebSocketCore;
+using WebSocketCore.Server;
 
 namespace Example3
 {

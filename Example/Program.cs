@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
-using WebSocketSharp;
-using WebSocketSharp.Net;
+using WebSocketCore;
+using WebSocketCore.Net;
 
 namespace Example
 {

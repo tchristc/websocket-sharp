@@ -2,9 +2,9 @@ using System;
 using System.Configuration;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using WebSocketSharp;
-using WebSocketSharp.Net;
-using WebSocketSharp.Server;
+using WebSocketCore;
+using WebSocketCore.Net;
+using WebSocketCore.Server;
 
 namespace Example3
 {
