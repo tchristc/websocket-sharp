@@ -37,6 +37,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.IO.Pipelines;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Principal;
@@ -44,11 +45,17 @@ using System.Text;
 
 namespace WebSocketCore.Net.WebSockets
 {
+    interface IDuplexPipe
+    {
+        PipeReader Input { get; }
+        PipeWriter Output { get; }
+    }
+
     /// <summary>
     /// Provides the access to the information in a WebSocket handshake request to
     /// a <see cref="TcpListener"/> instance.
     /// </summary>
-    internal class TcpListenerWebSocketContext : WebSocketContext
+    internal class PipelineListenerWebSocketContext : WebSocketContext
     {
         #region Private Fields
 
@@ -68,7 +75,7 @@ namespace WebSocketCore.Net.WebSockets
 
         #region Internal Constructors
 
-        internal TcpListenerWebSocketContext(
+        internal PipelineListenerWebSocketContext(
           TcpClient tcpClient,
           string protocol,
           bool secure,

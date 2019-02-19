@@ -8,4 +8,8 @@
     <Compile Remove="AssemblyInfo.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.IO.Pipelines" Version="4.5.3" />
+  </ItemGroup>
+
 </Project>
